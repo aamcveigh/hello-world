@@ -7,5 +7,5 @@ mv ansibledoc /tmp
 
 printf "Number of versions: "
 
-cat /tmp/ansibledoc | grep -oE 'ansible-[1-9].[1-9].[1-9].tar.gz|ansible-[1-9].[1-9].tar.gz|ansible-[1-9].[1-9].[1-9].0.tar.gz' | grep -v .*.tar.gz.sha | sort -u | wc -l 
+cat /tmp/ansibledoc | grep -oE 'ansible-[0-9].[0-9].[0-9].tar.gz|ansible-[0-9].[0-9].tar.gz|ansible-[0-9].[0-9].[0-9].[0-9].tar.gz' | grep -v .*.tar.gz.sha | sort -u | wc -l
 
