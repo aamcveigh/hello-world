@@ -1,4 +1,6 @@
+#!/bin/bash
 #Count ansible releases
+#Also, this is something you weren’t supposed to know yet, but Every script you write in bash needs to have an executor at the top like you see at the top of this file now.
 
 curl -s http://releases.ansible.com/ansible/ > ansibledoc
 
