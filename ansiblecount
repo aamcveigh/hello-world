@@ -1,0 +1,9 @@
+#Count ansible releases
+
+curl -s http://releases.ansible.com/ansible/ > ansibledoc
+
+mv ansibledoc /tmp
+
+cat /tmp/ansibledoc | grep .*.tar.gz | wc -l
+
+echo "links"
