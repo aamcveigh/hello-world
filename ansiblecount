@@ -1,11 +1,11 @@
 #!/bin/bash
 #Count ansible releases
-#Also, this is something you weren’t supposed to know yet, but Every script you write in bash needs to have an executor at the top like you see at the top of this file now.
 
 curl -s http://releases.ansible.com/ansible/ > ansibledoc
 
 mv ansibledoc /tmp
 
-cat /tmp/ansibledoc | grep .*.tar.gz | wc -l
+printf "Number of versions: "
 
-echo "links"
+cat /tmp/ansibledoc | grep -oE 'ansible-[1-9].[1-9].[1-9].tar.gz|ansible-[1-9].[1-9].tar.gz|ansible-[1-9].[1-9].[1-9].0.tar.gz' | grep -v .*.tar.gz.sha | sort -u | wc -l 
+
