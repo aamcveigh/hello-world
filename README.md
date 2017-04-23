@@ -13,6 +13,9 @@ It must be in its own seperate sh file
 ## Task 2
 
 Get the 2.x.x.0 ansible releases and print them to the user.
+
 Ask the user which version they want
+
 Download that version
+
 Clean up after yourself
