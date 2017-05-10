@@ -1,0 +1,16 @@
+#!/bin/bash
+#Count ansible releases
+
+curl -s http://releases.ansible.com/ansible/ > ansibledoc
+
+mv ansibledoc /tmp
+
+cat /tmp/ansibledoc | grep -o 'ansible-2.[0-9].[0-9].0.tar.gz' | grep -v .*.tar.gz.sha | sort -u
+
+echo Which version would you like?
+
+read ver
+
+rm /tmp/ansibledoc
+
+curl -O http://releases.ansible.com/ansible/${ver} 
